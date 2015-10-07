@@ -1,10 +1,3 @@
-//
-//  DemoQuoteUITests.swift
-//  DemoQuoteUITests
-//
-//  Created by somkiat puisungnoen on 10/5/2558 BE.
-//  Copyright © 2558 ___UP1___. All rights reserved.
-//
 
 import XCTest
 
@@ -12,25 +5,44 @@ class DemoQuoteUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMyFirstUI() {
+        
+        let app = XCUIApplication()
+        
+        let beforeCount = app.tables.cells.count
+        app.navigationBars["My Quote"].buttons["Add"].tap()
+        
+        let enterYourLoveQuoteTextField = app.textFields["Enter your love quote"]
+        enterYourLoveQuoteTextField.tap()
+        enterYourLoveQuoteTextField.typeText("test test")
+        app.navigationBars["New Quote"].buttons["Save"].tap()
+        let afterCount = app.tables.cells.count
+        
+        XCTAssertEqual(beforeCount, afterCount-1)
+    }
+    
+    func testMySecondUI() {
+        
+        let app = XCUIApplication()
+        
+        let beforeCount = app.tables.cells.count
+        app.navigationBars["My Quote"].buttons["Add"].tap()
+        
+        let enterYourLoveQuoteTextField = app.textFields["Enter your love quote"]
+        enterYourLoveQuoteTextField.tap()
+        enterYourLoveQuoteTextField.typeText("My new quote")
+        app.navigationBars["New Quote"].buttons["Save"].tap()
+        let newQuote = app.tables.cells.elementBoundByIndex(beforeCount).staticTexts.elementBoundByIndex(0).label
+        
+        XCTAssertEqual("My new quote", newQuote)
     }
     
 }
