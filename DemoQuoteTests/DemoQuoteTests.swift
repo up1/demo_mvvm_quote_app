@@ -11,6 +11,13 @@ import XCTest
 
 class DemoQuoteTests: XCTestCase {
     
+    func testViewModelShoukdInvalid() {
+        let stubDelegate = StubDelegate()
+        let mv = NewQuoteViewModel(delegate: stubDelegate)
+        mv.content = ""
+        mv.saveNewQuote()
+        XCTAssertEqual(2, stubDelegate.calledCount)
+    }
     
     
 }

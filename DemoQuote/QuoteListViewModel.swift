@@ -1,7 +1,16 @@
 class QuoteListViewModel {
     
     let context: MyContext = MyContext.defaultContext
-    var quotes: [String] = []
+    private var quotes: [String] = []
+    var data: Interactor!
+    
+    init() {
+        data = FakeData()
+        quotes = data.getData()
+        for quote in quotes {
+            context.addNewQuote(quote)
+        }
+    }
     
     func numberOfQuote() -> Int {
         return quotes.count
@@ -14,7 +23,15 @@ class QuoteListViewModel {
     func refresh() {
         quotes = context.quotes
     }
-    
-    
-    
+   
+}
+
+protocol Interactor {
+    func getData() -> [String]
+}
+
+class FakeData: Interactor {
+    func getData() -> [String] {
+        return ["Fake1", "Fake2"]
+    }
 }

@@ -2,6 +2,7 @@ import Foundation
 
 class NewQuoteViewModel {
     let context: MyContext = MyContext.defaultContext
+    
     var content: String = ""
     var delegate: NewQuoteViewModelDelegate?
     
@@ -10,7 +11,8 @@ class NewQuoteViewModel {
     }
     
     func saveNewQuote() {
-        if self.content == "" {
+        if validateInput() {
+            self.delegate?.showInvalidContent()
             self.delegate?.showInvalidContent()
         } else {
             context.addNewQuote(content)
@@ -18,4 +20,21 @@ class NewQuoteViewModel {
         }
     }
     
+    func validateInput() -> Bool {
+        return self.content == ""
+    }
+    
 }
+
+class StubDelegate: NewQuoteViewModelDelegate {
+    var calledCount = 0
+    func dismissAddView() {
+    }
+    
+    func showInvalidContent() {
+        calledCount++
+    }
+}
+
+
+

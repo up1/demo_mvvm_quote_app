@@ -21,6 +21,7 @@
 		A2C797361BC441D100E6847A /* MyContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C797351BC441D100E6847A /* MyContext.swift */; };
 		A2C797381BC4428B00E6847A /* NewQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C797371BC4428B00E6847A /* NewQuoteViewModel.swift */; };
 		A2C7973A1BC49B0200E6847A /* NewQuoteViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C797391BC49B0200E6847A /* NewQuoteViewModelDelegate.swift */; };
+		A2C797AA1BC5194A00E6847A /* EditQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C797A91BC5194A00E6847A /* EditQuoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		A2C797351BC441D100E6847A /* MyContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyContext.swift; sourceTree = "<group>"; };
 		A2C797371BC4428B00E6847A /* NewQuoteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewQuoteViewModel.swift; sourceTree = "<group>"; };
 		A2C797391BC49B0200E6847A /* NewQuoteViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewQuoteViewModelDelegate.swift; sourceTree = "<group>"; };
+		A2C797A91BC5194A00E6847A /* EditQuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditQuoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A218F2BD1BC2AED6004C8017 /* AppDelegate.swift */,
+				A2C797351BC441D100E6847A /* MyContext.swift */,
 				A218F2BF1BC2AED6004C8017 /* QuoteListViewController.swift */,
 				A2C797331BC43E8600E6847A /* QuoteListViewModel.swift */,
 				A218F2F01BC2C541004C8017 /* NewQuoteViewController.swift */,
@@ -123,7 +126,7 @@
 				A218F2C91BC2AED6004C8017 /* LaunchScreen.storyboard */,
 				A218F2CC1BC2AED6004C8017 /* Info.plist */,
 				A218F2C41BC2AED6004C8017 /* DemoQuote.xcdatamodeld */,
-				A2C797351BC441D100E6847A /* MyContext.swift */,
+				A2C797A91BC5194A00E6847A /* EditQuoteViewController.swift */,
 			);
 			path = DemoQuote;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A218F2EF1BC2B261004C8017 /* Quote.swift in Sources */,
+				A2C797AA1BC5194A00E6847A /* EditQuoteViewController.swift in Sources */,
 				A218F2F11BC2C541004C8017 /* NewQuoteViewController.swift in Sources */,
 				A2C7973A1BC49B0200E6847A /* NewQuoteViewModelDelegate.swift in Sources */,
 				A2C797361BC441D100E6847A /* MyContext.swift in Sources */,
